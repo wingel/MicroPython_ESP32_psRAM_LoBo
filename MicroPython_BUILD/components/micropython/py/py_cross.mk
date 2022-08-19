@@ -177,6 +177,7 @@ PY_O_BASENAME = \
 	../extmod/moduheapq.o \
 	../extmod/modutimeq.o \
 	../extmod/moduhashlib.o \
+	../extmod/modued25519.o \
 	../extmod/modubinascii.o \
 	../extmod/virtpin.o \
 	../extmod/machine_mem.o \

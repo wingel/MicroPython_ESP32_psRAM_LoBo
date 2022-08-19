@@ -44,6 +44,7 @@ modframebuf.c<br>
 modlwip.c<br>
 moduhashlib.c<br>
 moduselect.c<br>
+modued25519.c<br>
 modussl_mbedtls.c<br>
 modutimeq.c<br>
 utime_mphal.c<br>

@@ -209,6 +209,7 @@
 #define MICROPY_PY_USSL_FINALISER           (0) // Crashes on gc if enabled!
 #define MICROPY_PY_UHASHLIB                 (0) // We use the ESP32 version
 #define MICROPY_PY_UHASHLIB_SHA1            (MICROPY_PY_USSL && MICROPY_SSL_MBEDTLS)
+#define MICROPY_PY_UED25519                 (1)
 
 #ifdef CONFIG_MICROPY_USE_WEBSOCKETS
 #define MICROPY_PY_WEBSOCKET                (1)

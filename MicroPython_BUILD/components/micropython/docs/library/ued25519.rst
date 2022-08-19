@@ -1,0 +1,19 @@
+:mod:`ued25519` -- ed25519 library
+==================================
+
+.. module:: ued25519
+   :synopsis: ed25519 signature functions
+
+Low level Python bindings to the ed25519 Digital Signature System in
+libsodium.
+
+Functions
+---------
+
+.. function:: open(signature_and_message, public_key)
+
+   Checks that the signature_and_message has a valid signature for
+   public_key.
+
+   Returns the message without the signature,
+   or None if the signature is invalid.
