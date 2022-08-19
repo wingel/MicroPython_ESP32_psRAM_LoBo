@@ -27,6 +27,10 @@ be implemented:
 Constructors
 ------------
 
+.. class:: uhashlib.sha512([data])
+
+    Create an SHA512 hasher object and optionally feed ``data`` into it.
+
 .. class:: uhashlib.sha256([data])
 
     Create an SHA256 hasher object and optionally feed ``data`` into it.
