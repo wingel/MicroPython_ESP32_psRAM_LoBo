@@ -57,6 +57,10 @@ Functions
    which expresses a time as per localtime. It returns an integer which is
    the number of seconds since Jan 1, 2000.
 
+.. function:: sleep(settime)
+
+   Set the the time, ths format for settime is the same as returned by time().
+
 .. function:: sleep(seconds)
 
    Sleep for the given number of seconds. Some boards may accept *seconds* as a

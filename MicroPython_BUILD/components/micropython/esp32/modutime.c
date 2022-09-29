@@ -29,6 +29,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include <sys/time.h>
 #include <time.h>
 
@@ -45,6 +46,19 @@ STATIC mp_obj_t time_time(void) {
     return mp_obj_new_float(curtime);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(time_time_obj, time_time);
+
+//-------------------------------
+STATIC mp_obj_t time_settime(mp_obj_t t_obj) {
+    struct timeval tv;
+    struct timeval tv2;
+    double t = mp_obj_get_float(t_obj);
+    double tfloor = floor(t);
+    tv.tv_sec = tfloor;
+    tv.tv_usec = (t - tfloor) * 1000000;
+    settimeofday(&tv, NULL);
+    return mp_const_none;
+}
+MP_DEFINE_CONST_FUN_OBJ_1(time_settime_obj, time_settime);
 
 //---------------------------------------------------------------------------------------------
 STATIC mp_obj_t time_localtime(mp_uint_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
@@ -199,6 +213,7 @@ STATIC const mp_rom_map_elem_t time_module_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_utime) },
 
     { MP_ROM_QSTR(MP_QSTR_time),           MP_ROM_PTR(&time_time_obj) },
+    { MP_ROM_QSTR(MP_QSTR_settime),        MP_ROM_PTR(&time_settime_obj) },
     { MP_ROM_QSTR(MP_QSTR_mktime),         MP_ROM_PTR(&time_mktime_obj) },
     { MP_ROM_QSTR(MP_QSTR_localtime),      MP_ROM_PTR(&time_localtime_obj) },
     { MP_ROM_QSTR(MP_QSTR_gmtime),         MP_ROM_PTR(&time_gmtime_obj) },
